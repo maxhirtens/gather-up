@@ -17,15 +17,16 @@ move = shutil.move
 
 # If there are duplicate filenames, you will be prompted to overwrite or skip by the OS.
 
+# need to make it work for folders with a space in the name
 src_folder = abspath(sys.argv[1])
 
 print("Source Folder:" + src_folder)
-print("Gathering images...")
+print("Gathering files...")
 
-# Create a new folder called 'Gathered Images' in the source folder
-gathered_images_folder = src_folder + "/_Gathered-Images"
-if not os.path.exists(gathered_images_folder):
-    os.makedirs(gathered_images_folder)
+# Create a new folder called 'Gathered' in the source folder
+gathered_files_folder = src_folder + "/_Gathered-Files"
+if not os.path.exists(gathered_files_folder):
+    os.makedirs(gathered_files_folder)
 
 # Walk through all subdirectories of the source folder, add files to memory
 filelist = []
@@ -34,8 +35,18 @@ for root, dirs, files in os.walk(src_folder):
     for file in files:
         filelist.append(os.path.join(root, file))
 
-print(filelist)
-
 # Move all files to the new folder
-for file in filelist:
-    move(file, gathered_images_folder)
+try:
+    for file in filelist:
+        # move file if it doesn't start with a period
+        if file.endswith(".DS_Store"):
+            print("Skipping " + file)
+            continue
+        else:
+            move(file, gathered_files_folder)
+            print("Moved " + file)
+
+except Exception as err:
+    print("Error moving some files: " + err)
+
+print("Gathered up!")

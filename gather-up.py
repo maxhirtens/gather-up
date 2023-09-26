@@ -16,7 +16,7 @@ copy = shutil.copy2
 # For example, 'python gather-up.py ~/Desktop/images' will search
 # through all subfolders of /images and copy all files to a new top level folder.
 
-# If there are duplicate filenames, you will be prompted to overwrite or skip by the OS.
+# Duplicate file names will be renamed.
 
 src_folder = abspath(sys.argv[1])
 

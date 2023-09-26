@@ -10,7 +10,7 @@ listdir = os.listdir
 move = shutil.move
 
 # sys.argv[1] is your source folder. Any photos inside subdirectories here will
-# be copied to a folder at the top level of this folder called 'Gathered Images' on execution.
+# be copied to a folder at the top level of this folder called '_Gathered-Files' on execution.
 
 # For example, 'python gather-up.py ~/Desktop/images' will search
 # through all subfolders of /images and move all files to the top level.

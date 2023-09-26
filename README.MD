@@ -17,4 +17,4 @@ So, for example, use your command line to:
 
 (Don't use folders with spaces in their name!)
 
-You should see a new folder appear called '\_Gathered-Files' get populated with all files found within this folder's several levels.
+You should see a new folder appear called '\_Gathered-Files' that gets populated with all files found within this folder's sublevels.

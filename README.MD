@@ -13,8 +13,6 @@ First, clone this repo to your local machine, then cd into it.
 You can use the 'testdir' directory to test this tool's usage.
 
 So, for example, use your command line to:
-`python gather-up.py ./testdir`
-
-(Don't use folders with spaces in their name!)
+`python gather-up.py "./testdir"`
 
 You should see a new folder appear called '\_Gathered-Files' that gets populated with all files found within this folder's sublevels.
